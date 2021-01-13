@@ -12,7 +12,8 @@ RUN apk update && \
     apk add git openssh
 ADD ./id_rsa /root/.ssh/id_rsa
 WORKDIR /work
-RUN git config --global user.name "farmerpiac" && \
+RUN chmod 700 /root/.ssh/id_rsa && \
+    git config --global user.name "farmerpiac" && \
     git config --global user.email "info@farmerpiac.hu" && \
     ssh-keyscan github.com >> /root/.ssh/known_hosts && \
     git clone git@github.com:farmerpiac/assets.farmerpiac.hu.git && \
