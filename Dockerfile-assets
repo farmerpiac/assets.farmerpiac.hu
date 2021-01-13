@@ -5,7 +5,7 @@ RUN apk update && \
 ADD . /work
 WORKDIR /work
 RUN sh ./build-nginx.sh && \
-    rm -rf ./.git ./.database ./application ./deploy ./system ./.gitignore ./.gitlab-ci.yml ./1.obaju-2-1-1.zip ./build-nginx.sh ./Dockerfile ./index.php ./robots.txt ./sitemap.xml ./README.md ./output ./id_rsa
+    rm -rf ./.git ./.databases ./application ./deploy ./system ./.gitignore ./.gitlab-ci.yml ./1.obaju-2-1-1.zip ./build-nginx.sh ./Dockerfile ./index.php ./robots.txt ./sitemap.xml ./README.md ./output ./id_rsa
 
 FROM alpine:3.12.3
 RUN apk update && \
